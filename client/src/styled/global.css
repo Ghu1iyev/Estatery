@@ -1,0 +1,21 @@
+@import '../../node_modules/tailwindcss/base.css';
+@import '../../node_modules/tailwindcss/components.css';
+@import '../../node_modules/tailwindcss/utilities.css';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.detail{
+    @apply border-2 h-[115px] rounded-lg mt-[32px] flex items-center pl-[23px] pr-[52px] py-[24px] justify-between md:flex-wrap md:gap-5 md:h-full sm:flex-col
+}
+.header{
+    @apply h-[96px] sm:h-[72px] sm:border-b border-[#F0EFFB] flex justify-between w-full items-center px-[24px] bg-white
+}
+.property-calendar-btn{
+    @apply flex items-center gap-1 text-[14px] font-medium px-[16px] py-[10px] border-2 border-[#E0DEF7] rounded-lg
+}
