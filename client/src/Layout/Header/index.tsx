@@ -26,12 +26,14 @@ const Header = () => {
 
   let pageTitle;
   if (locationPath === '/') {
-    pageTitle = "Home";
+    pageTitle = "Dashboard";
   }
   else if(locationPath === '/my-properties') {
     pageTitle = "My Properties";
   } else if(locationPath === `/rental-list/${rentSlug}`) {
     pageTitle = 'Rental List';
+  } else if(locationPath === '/tenancy-application') {
+    pageTitle = 'Tenancy Application';
   }
 
   return (

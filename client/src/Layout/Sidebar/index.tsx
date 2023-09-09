@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import Logo from '../../assets/images/Logo.svg'
 import Dashboard from '../../assets/images/Dashboard.svg'
 import Insight from '../../assets/images/Insight.svg'
@@ -17,16 +17,10 @@ type ImageType = {
   link: string
 }
 
-const images: ImageType[] = [
-  { src: Dashboard, link: '/' },
-  { src: Insight, link: '/my-properties' },
-  { src: Listing, link: '/rental-list' },
-  { src: Tenants, link: '/tenants' },
-  { src: RentPayment, link: '/rent-payment' },
-  { src: Message, link: '/message' },
-];
+
 
 const Sidebar = () => {
+  const { rentSlug } = useParams<{ rentSlug: string }>();
   const [loading, setisLoading] = useState<boolean>(true)
   useEffect(() => {
     setTimeout(() => {
@@ -34,9 +28,17 @@ const Sidebar = () => {
     },1000)
   },[])
 
+  const images: ImageType[] = [
+    { src: Dashboard, link: '/' },
+    { src: Insight, link: '/my-properties' },
+    { src: Listing, link: `/rental-list/${rentSlug}` },
+    { src: Tenants, link: '/tenancy-application' },
+    { src: RentPayment, link: '/rent-payment' },
+    { src: Message, link: '/message' },
+  ];
   
   return (
-    <div className="w-[90px] h-[1229px] bg-white 2xl:hidden">
+    <div className="w-[90px] h-[1229px] bg-white 2xl:hidden border-r-2">
       <div className='flex flex-col justify-between items-center h-full'>
       <div>
         <div className='mt-[24px] mb-[48px]'>

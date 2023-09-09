@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import MyProperties from "../Pages/MyProperties/MyProperties";
 import RentalList from "../Pages/RentalList/RentalList";
-import Home from "../Pages/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Dashboard from "../Pages/Dashboard";
+import TenacnyApplication from "../Pages/TenancyApplication/TenancyApplication";
 
 export const routers = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ export const routers = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />
+                element: <Dashboard />
             },
             {
                 path: "/my-properties",
@@ -24,6 +25,10 @@ export const routers = createBrowserRouter([
             {
                 path: "/rental-list/:rentSlug",
                 element: <RentalList />
+            },
+            {
+                path: "/tenancy-application",
+                element: <TenacnyApplication />
             }
         ] 
     }

@@ -13,3 +13,11 @@ export type HomeProps = {
     status: "ACTIVE" | "ARCHIVE" | "MAINTENANCE",
     categories: string[];
 }
+
+export type TenantProps = {
+    applied: "datetime",
+    tenant: "string",
+    image: "string",
+    totalIncome: "string",
+    incomeToRent: "string"
+}
