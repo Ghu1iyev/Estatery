@@ -23,7 +23,7 @@ const TopBar = () => {
       {
         loading ? (<Skeleton width={205} height={27} />) : (<Link className='flex items-center font-bold text-medium-slate-blue text-[18px]' to="rental-portfolio"><MdKeyboardArrowLeft fontSize={22}/> Back to rental portfolio</Link>)
       }
-      <h2 className='hidden sm:block text-[24px] font-bold my-[24px]'>My Properties</h2>
+      <h2 className='hidden sm:block text-[24px] my-[24px]'>My Properties</h2>
     <Section>
     <div className='h-full py-1'>
         {

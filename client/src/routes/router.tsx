@@ -5,6 +5,7 @@ import RentalList from "../Pages/RentalList/RentalList";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Dashboard from "../Pages/Dashboard";
 import TenacnyApplication from "../Pages/TenancyApplication/TenancyApplication";
+import ApplicationSummary from "../Pages/ApplicationSummary/ApplicationSummary";
 
 export const routers = createBrowserRouter([
     {
@@ -29,7 +30,12 @@ export const routers = createBrowserRouter([
             {
                 path: "/tenancy-application",
                 element: <TenacnyApplication />
-            }
+            },
+            
         ] 
+    },
+    {
+        path: "/tenancy-application/tenant-details",
+        element: <ApplicationSummary />
     }
 ])

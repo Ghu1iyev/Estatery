@@ -1,6 +1,7 @@
 @import '../../node_modules/tailwindcss/base.css';
 @import '../../node_modules/tailwindcss/components.css';
 @import '../../node_modules/tailwindcss/utilities.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 *{
@@ -10,14 +11,34 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.detail{
-    @apply border-2 h-[115px] rounded-lg mt-[32px] flex items-center pl-[23px] pr-[52px] py-[24px] justify-between md:flex-wrap md:gap-5 md:h-full sm:flex-col
-}
-.header{
-    @apply h-[96px] sm:h-[72px] sm:border-b border-[#F0EFFB] flex justify-between w-full items-center px-[24px] bg-white border-b-2
-}
-.property-calendar-btn{
-    @apply flex items-center gap-1 text-[14px] font-medium px-[16px] py-[10px] border-2 border-[#E0DEF7] rounded-lg
+@layer components{
+    .detail{
+        @apply border-2 h-[115px] rounded-lg mt-[32px] flex items-center pl-[23px] pr-[52px] py-[24px] justify-between md:flex-wrap md:gap-5 md:h-full sm:flex-col
+    }
+    .header{
+        @apply h-[96px] sm:h-[72px] sm:border-b border-[#F0EFFB] flex justify-between w-full items-center px-[24px] bg-white border-b-2
+    }
+    .property-calendar-btn{
+        @apply flex items-center gap-1 text-[14px] font-medium px-[16px] py-[10px] border-2 border-[#E0DEF7] rounded-lg
+    }
+    .back-applications-btn{
+        @apply flex items-center gap-2 text-[18px] font-bold text-medium-slate-blue pt-[21px] pb-[29px] sm:pb-0
+    }
+    .credit-report{
+        @apply w-[497px] h-[396px] rounded-lg border-2 p-[24px] lg:w-full lg:mt-[20px] lg:h-full mb-[20px]
+    }
+    .application-summary{
+        @apply w-[912px] h-[1148px] bg-white rounded-lg border-2 px-[24px] lg:w-full lg:mt-[20px] lg:h-full
+    }
+    .applied{
+        @apply w-[864px] h-[154px] bg-ghost-white rounded-lg mt-[32px] overflow-hidden flex lg:flex-col lg:h-[300px] lg:w-full sm:h-[367px]
+    }
+} 
+
+@layer base {
+    h2{
+        @apply text-[16px] font-bold 
+    }
 }
 
 .ant-table-row{

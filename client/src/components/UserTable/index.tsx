@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { Space, Table } from 'antd';
 import { IoEllipsisHorizontalSharp } from 'react-icons/io5';
 import Modal from '../Atoms/Modal';
 import { TenantProps } from '../../types/type';
-import { FetchData } from '../../utils/apihelper';
+import { FetchData } from '../../service/Api';
+import {useQuery} from '@tanstack/react-query'
 
 interface DataType {
   key: string;
@@ -14,16 +15,10 @@ interface DataType {
 }
 
 const UserTable: React.FC = () => {
-  
+  const {data} = useQuery({
+    queryKey: ["users"],
+    queryFn: () => FetchData("*[_type=='tenancy']").then((res: TenantProps[]) => res)})
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [tenant, setTenant] = useState<TenantProps[]>([]);
-console.log(tenant);
-
-  useEffect(() => {
-    FetchData("*[_type=='tenancy']").then((res: TenantProps[]) => {
-      setTenant(res);
-    }); 
-  }, []);
 
   const columns: ColumnsType<DataType> = [
     {
@@ -72,7 +67,7 @@ console.log(tenant);
   return (
     <>
       {showModal ? <Modal /> : null}
-      <Table className='px-[16px] mt-[16px]' columns={columns} dataSource={tenant} />
+      <Table className='px-[16px] mt-[16px]' columns={columns} dataSource={data} />
     </>
   );
 };

@@ -17,7 +17,7 @@ const Btn = ({ children, className, ...props }: ButtonProps) => {
 
 export default Btn;
 
-const Button = styled.button`
+const Button = styled.button<ButtonProps>`
     display: flex;
     justify-content: center;
     align-items: center;

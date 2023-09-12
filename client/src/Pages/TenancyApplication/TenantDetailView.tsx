@@ -1,6 +1,7 @@
 import User from '../../assets/images/userrr.png'
 import TotalIncome from '../../assets/images/Total income.svg'
 import  IconToRent from '../../assets/images/Icon to rent.svg'
+import { Link } from 'react-router-dom'
 const TenantDetailView = () => {
   return (
     <div className="ml-[24px] h-full mt-[24px] xl:hidden">  
@@ -36,7 +37,7 @@ const TenantDetailView = () => {
                         <p className='font-medium'>$4,500/mo</p>
                     </div>
             </div>
-            <button className='w-full bg-medium-slate-blue text-white rounded-lg py-[12px] font-bold mt-[32px]'>View Application</button>
+            <Link to="/tenancy-application/tenant-details"><button className='w-full bg-medium-slate-blue text-white rounded-lg py-[12px] font-bold mt-[32px]'>View Application</button></Link>
         </div>
     </div>
   )

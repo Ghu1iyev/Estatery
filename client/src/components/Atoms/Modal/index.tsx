@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { client } from "../../../service/sanity";
-
 import Loader from "../Loader";
 
 const Modal = () => {
@@ -32,7 +31,7 @@ const Modal = () => {
       setLoading(false)
       setForm({
       applied: "",
-    tenant: "",
+      tenant: "",
     totalInCome: "",
     inComeToRent: "",
     image: ""
